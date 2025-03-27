@@ -1,6 +1,12 @@
 # BBCNewsApp
 an app to show top headlines for a specific source (BBC News)
 
+<div align="center">
+ <img src="https://github.com/user-attachments/assets/c33536b1-2e72-4f71-b159-a33bb828fef0" width="300px" /> 
+
+
+</div>
+
  ## Built With 🛠
  - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
  - [Jetpack Compose ](https://developer.android.com/develop/ui/compose/documentation) - Jetpack Compose is the modern toolkit for building native Android UI. Here's where you'll find the latest information about using Compose.
