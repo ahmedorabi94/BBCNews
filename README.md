@@ -13,7 +13,6 @@ an app to show top headlines for a specific source (BBC News)
   - [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Hilt is a dependency injection library for Android that reduces        the boilerplate of doing manual dependency injection in your project
 - [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java.
 - [Coil](https://coil-kt.github.io/coil/compose/) - For Loading images from Urls.
-- [Material Components for Android](https://github.com/material-components/material-components-android) - Modular and customizable Material Design UI components for Android.
 - Testing
   - [Unit Tests](https://en.wikipedia.org/wiki/Unit_testing)
   - [Mockito](https://site.mockito.org/) - mocking framework
