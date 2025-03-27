@@ -3,17 +3,16 @@ an app to show top headlines for a specific source (BBC News)
 
  ## Built With 🛠
  - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
+ - [Jetpack Compose ](https://developer.android.com/develop/ui/compose/documentation) - Jetpack Compose is the modern toolkit for building native Android UI. Here's where you'll find the latest information about using Compose.
  - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - For asynchronous and more.
  - [Flow](https://kotlinlang.org/docs/flow.html) -  a flow is a type that can emit multiple values sequentially.
  - [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
-  - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Data objects that notify views when the underlying database changes.
   - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes.
-  - [Navigation](https://developer.android.com/topic/libraries/architecture/navigation/) - in-app navigation
-  - [View Binding](https://developer.android.com/topic/libraries/view-binding) - allows you to more easily write code that interacts with views.
+  - [Compose Navigation](https://developer.android.com/develop/ui/compose/navigation) - in-app navigation
 - [Dependency Injection](https://developer.android.com/training/dependency-injection)
   - [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Hilt is a dependency injection library for Android that reduces        the boilerplate of doing manual dependency injection in your project
 - [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java.
-- [Glide](https://github.com/bumptech/glide) - For Loading images from Urls.
+- [Coil](https://coil-kt.github.io/coil/compose/) - For Loading images from Urls.
 - [Material Components for Android](https://github.com/material-components/material-components-android) - Modular and customizable Material Design UI components for Android.
 - Testing
   - [Unit Tests](https://en.wikipedia.org/wiki/Unit_testing)
