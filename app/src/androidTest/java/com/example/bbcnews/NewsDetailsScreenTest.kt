@@ -6,8 +6,8 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.bbcnews.core.domain.models.Article
 import com.example.bbcnews.core.domain.models.Source
-import com.example.bbcnews.ui.news_details.NewsDetailsScreen
-import com.example.bbcnews.ui.theme.BBCNewsTheme
+import com.example.bbcnews.features.news_details.NewsDetailsScreen
+import com.example.bbcnews.theme.BBCNewsTheme
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

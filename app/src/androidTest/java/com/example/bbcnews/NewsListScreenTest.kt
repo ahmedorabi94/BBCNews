@@ -7,9 +7,9 @@ import com.example.bbcnews.core.data.Resource
 import com.example.bbcnews.core.domain.models.Article
 import com.example.bbcnews.core.domain.models.Source
 import com.example.bbcnews.core.domain.usecases.GetNewsUseCase
-import com.example.bbcnews.ui.news_list.GetNewsListViewModel
-import com.example.bbcnews.ui.news_list.NewsListScreen
-import com.example.bbcnews.ui.theme.BBCNewsTheme
+import com.example.bbcnews.features.news_list.viewmodel.GetNewsListViewModel
+import com.example.bbcnews.features.news_list.ui.NewsListScreen
+import com.example.bbcnews.theme.BBCNewsTheme
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flow

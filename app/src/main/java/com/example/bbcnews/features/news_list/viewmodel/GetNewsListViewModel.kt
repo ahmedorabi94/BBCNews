@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.news_list
+package com.example.bbcnews.features.news_list.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

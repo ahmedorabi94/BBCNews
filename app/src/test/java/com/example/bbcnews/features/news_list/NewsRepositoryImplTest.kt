@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.news_list
+package com.example.bbcnews.features.news_list
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.bbcnews.TestCoroutineRule
@@ -7,6 +7,7 @@ import com.example.bbcnews.core.data.Resource
 import com.example.bbcnews.core.domain.models.Article
 import com.example.bbcnews.core.domain.models.NewsResponse
 import com.example.bbcnews.core.domain.models.Source
+import com.example.bbcnews.features.news_list.framework.NewsRepositoryImpl
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first

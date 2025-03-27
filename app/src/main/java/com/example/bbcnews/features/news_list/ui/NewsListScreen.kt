@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.news_list
+package com.example.bbcnews.features.news_list.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
@@ -20,6 +20,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.bbcnews.BuildConfig
 import com.example.bbcnews.core.data.Resource
 import com.example.bbcnews.core.domain.models.Article
+import com.example.bbcnews.features.news_list.viewmodel.GetNewsListViewModel
 import java.util.Locale
 
 @Preview

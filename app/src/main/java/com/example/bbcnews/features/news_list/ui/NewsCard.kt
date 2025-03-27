@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.news_list
+package com.example.bbcnews.features.news_list.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape

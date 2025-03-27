@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.theme
+package com.example.bbcnews.theme
 
 import androidx.compose.ui.graphics.Color
 

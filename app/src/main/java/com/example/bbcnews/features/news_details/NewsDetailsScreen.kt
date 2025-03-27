@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.news_details
+package com.example.bbcnews.features.news_details
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -24,10 +24,9 @@ fun NewsDetailsScreen(
     publishedAt: String= "",
     content: String= "",
     author: String= "",
-    modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
     ) {

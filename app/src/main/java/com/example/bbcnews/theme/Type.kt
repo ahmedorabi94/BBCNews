@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.theme
+package com.example.bbcnews.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

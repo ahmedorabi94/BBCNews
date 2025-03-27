@@ -1,7 +1,8 @@
-package com.example.bbcnews.ui.news_list
+package com.example.bbcnews.features.news_list.di
 
 import com.example.bbcnews.core.data.ApiService
 import com.example.bbcnews.core.repo.NewsDataSource
+import com.example.bbcnews.features.news_list.framework.NewsRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

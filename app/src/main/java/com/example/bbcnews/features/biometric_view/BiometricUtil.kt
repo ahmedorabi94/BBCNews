@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.biometric_view
+package com.example.bbcnews.features.biometric_view
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity

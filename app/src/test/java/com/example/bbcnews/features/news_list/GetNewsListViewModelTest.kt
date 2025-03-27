@@ -1,12 +1,12 @@
-package com.example.bbcnews.ui.news_list
+package com.example.bbcnews.features.news_list
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.Observer
 import com.example.bbcnews.TestCoroutineRule
 import com.example.bbcnews.core.data.Resource
 import com.example.bbcnews.core.domain.models.Article
 import com.example.bbcnews.core.domain.models.Source
 import com.example.bbcnews.core.domain.usecases.GetNewsUseCase
+import com.example.bbcnews.features.news_list.viewmodel.GetNewsListViewModel
 
 import junit.framework.Assert
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -33,10 +33,6 @@ class GetNewsListViewModelTest {
     @get:Rule
     val testCoroutineRule = TestCoroutineRule()
 
-
-//    @Mock
-//    private lateinit var apiNewsObserver: Observer<Resource<List<Article>>>
-
     private lateinit var viewModel: GetNewsListViewModel
 
 
@@ -52,7 +48,7 @@ class GetNewsListViewModelTest {
     @Test
     fun shouldGetNewsListSuccessResponse() {
 
-        val article =  Article(
+        val article = Article(
             "BBC News", "", "",
             "", Source("", ""), "Police arrest", "", ""
         )
@@ -76,18 +72,13 @@ class GetNewsListViewModelTest {
 
 
             viewModel = GetNewsListViewModel(useCase)
-           // viewModel.newsResponse.observeForever(apiNewsObserver)
 
             Mockito.verify(useCase).invoke()
-
-          //  Mockito.verify(apiNewsObserver).onChanged(resource)
 
             val emittedValue = viewModel.newsResponse.first()
 
             Assert.assertEquals(emittedValue, resource)
             Assert.assertEquals(emittedValue.data?.get(0)?.author, "BBC News")
-
-          //  viewModel.newsResponse.removeObserver(apiNewsObserver)
 
 
         }

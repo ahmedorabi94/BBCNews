@@ -6,8 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.bbcnews.core.domain.models.Article
-import com.example.bbcnews.ui.news_details.NewsDetailsScreen
-import com.example.bbcnews.ui.news_list.NewsListScreen
+import com.example.bbcnews.features.news_details.NewsDetailsScreen
+import com.example.bbcnews.features.news_list.ui.NewsListScreen
 import com.google.gson.Gson
 import java.net.URLDecoder
 import java.net.URLEncoder
@@ -56,7 +56,6 @@ fun AppNavHost(
                 publishedAt = article?.publishedAt ?: "",
                 content = article?.content ?: "",
                 author = article?.author ?: "",
-
             )
         }
     }

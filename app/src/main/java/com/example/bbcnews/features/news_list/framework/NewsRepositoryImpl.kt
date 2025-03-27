@@ -1,4 +1,4 @@
-package com.example.bbcnews.ui.news_list
+package com.example.bbcnews.features.news_list.framework
 
 import com.example.bbcnews.core.data.ApiService
 import com.example.bbcnews.core.data.Resource
@@ -19,7 +19,7 @@ class NewsRepositoryImpl @Inject constructor(private val apiService: ApiService)
     override suspend fun getNewsResponse(): Flow<Resource<List<Article>>> {
         return flow {
 
-            emit(Resource.loading(null))
+            emit(Resource.Companion.loading(null))
 
             val response = safeApiCall(Dispatchers.IO) {
                 apiService.getNewsResponseAsync()
@@ -28,21 +28,24 @@ class NewsRepositoryImpl @Inject constructor(private val apiService: ApiService)
 
             when (response) {
                 is ResultWrapper.Success -> {
-                    val sortedList = response.value.articles.sortedBy {article->
+                    val sortedList = response.value.articles.sortedBy { article ->
                         article.publishedAt
                     }
-                    emit(Resource.success(sortedList))
+                    emit(Resource.Companion.success(sortedList))
                 }
+
                 is ResultWrapper.Error -> {
-                    emit(Resource.error(response.error?.message ?: "Unknown Error"))
+                    emit(Resource.Companion.error(response.error?.message ?: "Unknown Error"))
 
                 }
+
                 is ResultWrapper.NetworkError -> {
-                    emit(Resource.error("NetworkError"))
+                    emit(Resource.Companion.error("NetworkError"))
 
                 }
+
                 ResultWrapper.NoContentError -> {
-                    emit(Resource.error("NoContentError"))
+                    emit(Resource.Companion.error("NoContentError"))
 
                 }
             }
