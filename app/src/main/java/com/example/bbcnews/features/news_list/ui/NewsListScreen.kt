@@ -1,7 +1,7 @@
 package com.example.bbcnews.features.news_list.ui
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
@@ -10,6 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,21 +33,20 @@ fun NewsListScreen(
 ) {
     val newsItems by viewModel.newsResponse.collectAsStateWithLifecycle()
 
-    when(newsItems.status){
-        Resource.Status.SUCCESS -> {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = BuildConfig.FLAVOR.uppercase(Locale.ROOT) + " News Headlines",
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
-                )
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(
+            text = BuildConfig.FLAVOR.uppercase(Locale.ROOT) + " News Headlines",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
+        )
 
+        when(newsItems.status){
+            Resource.Status.SUCCESS -> {
                 LazyColumn(
                     modifier = modifier
                         .fillMaxSize()
@@ -63,28 +63,23 @@ fun NewsListScreen(
                             )
                         }
                     }
-
                 }
+            }
+            Resource.Status.ERROR -> {
+                Toast.makeText(LocalContext.current,newsItems.message, Toast.LENGTH_SHORT).show()
+            }
+            Resource.Status.LOADING -> {
+                CircularProgressIndicator(
+                    modifier = modifier.size(60.dp),
+                    color = Color.Black,
 
-//                // Loading Indicator
-//                if (isLoading) {
-//                    CircularProgressIndicator(
-//                        modifier = Modifier.size(60.dp),
-//                        color = Color.Black
-//                    )
-//                }
+                )
             }
         }
-        Resource.Status.ERROR -> {
 
-        }
-        Resource.Status.LOADING -> {
-            CircularProgressIndicator(
-                modifier = modifier.size(60.dp),
-                color = Color.Black
-            )
-        }
+
     }
+
 
 
 }
