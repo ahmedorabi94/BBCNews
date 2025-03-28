@@ -51,7 +51,7 @@ fun NewsListScreen(
                     modifier = modifier
                         .fillMaxSize()
                 ) {
-                    newsItems.data?.let {
+                    newsItems.data?.sortedBy { it.publishedAt }?.let {
                         items(it.size) { index ->
                             NewsCard(
                                 title = it[index].title ?: "",

@@ -1,5 +1,6 @@
 package com.example.bbcnews.features.news_list.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
+import coil.compose.rememberAsyncImagePainter
 
 @Preview
 @OptIn(ExperimentalMaterial3Api::class)
@@ -69,8 +70,8 @@ fun NewsCard(
                 )
             }
 
-            AsyncImage(
-                model = imageUrl,
+            Image(
+                painter = rememberAsyncImagePainter(imageUrl),
                 contentDescription = null,
                 modifier = Modifier
                     .size(150.dp, 100.dp)

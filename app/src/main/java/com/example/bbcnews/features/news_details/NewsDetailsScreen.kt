@@ -1,6 +1,13 @@
 package com.example.bbcnews.features.news_details
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
@@ -13,17 +20,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
+import coil.compose.rememberAsyncImagePainter
 
 @Preview
 @Composable
 fun NewsDetailsScreen(
     title: String = "",
-    imageUrl: String= "",
-    description: String= "",
-    publishedAt: String= "",
-    content: String= "",
-    author: String= "",
+    imageUrl: String = "",
+    description: String = "",
+    publishedAt: String = "",
+    content: String = "",
+    author: String = "",
 ) {
     Column(
         modifier = Modifier
@@ -42,8 +49,8 @@ fun NewsDetailsScreen(
         )
 
         // Image
-        AsyncImage(
-            model = imageUrl,
+        Image(
+            painter = rememberAsyncImagePainter(imageUrl),
             contentDescription = null,
             modifier = Modifier
                 .size(200.dp, 150.dp)
@@ -88,7 +95,8 @@ fun NewsDetailsScreen(
                 text = publishedAt,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(start = 20.dp))
+                modifier = Modifier.padding(start = 20.dp)
+            )
         }
 
         // Content Section
